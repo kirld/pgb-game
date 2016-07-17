@@ -6,10 +6,10 @@
         id        = "de.kiralynn"
         version   = "1.0.0">
 
-    <name>Camera App</name>
+    <name>Seal Dash - PGB game</name>
 
     <description>
-        Phone gap build that makes use of geolocation and the camera
+       Seal Dash game, avoid icebergs, makes use of phone vibration and accelerometer
     </description>
 
     <author href="http://kiraderksen.de" email="kiraderksen@hotmail.ca">
