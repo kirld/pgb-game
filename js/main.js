@@ -20,7 +20,9 @@
     // onSuccess: Get a snapshot of the current acceleration
     // And display these on the page
     function onSuccess(acceleration) {
-        acceleration.x         
+        acceleration.x
+
+        document.getElementById('test').innerHTML = acceleration.x;
 
         if(acceleration.x >= 4){
         	document.getElementById("char").style.right = "250px";
