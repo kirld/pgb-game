@@ -87,38 +87,38 @@
     // onSuccess: Get a snapshot of the current acceleration
     // And display these on the page
     function onSuccess(acceleration) {
-        var element = document.getElementById('test');
-        element.innerHTML = acceleration.x;
 
+        element.innerHTML = acceleration.x;
+        var character = document.getElementById("char");
         if(acceleration.x >= 4){
-        	document.getElementById("char").style.right = "250px";
+        	character.style.right = "250px";
         }
         else if(acceleration.x >= 3 && acceleration.x < 4){
-        	document.getElementById("char").style.right = "218.75px";
+        	character.style.right = "218.75px";
         }
     	else if(acceleration.x >= 2 && acceleration.x < 3){
-        	document.getElementById("char").style.right = "187.5px";
+        	character.style.right = "187.5px";
         }
         else if(acceleration.x >= 1 && acceleration.x < 2){
-        	document.getElementById("char").style.right = "156.25px";
+        	character.style.right = "156.25px";
         }
         else if(acceleration.x >= 0 && acceleration.x < 1){
-        	document.getElementById("char").style.right = "140px";
+        	character.style.right = "140px";
         }
     	else if(acceleration.x >= -1 && acceleration.x < 0){
-        	document.getElementById("char").style.right = "125px";
+        	character.style.right = "125px";
         }
     	else if(acceleration.x >= -2 && acceleration.x < -1){
-        	document.getElementById("char").style.right = "93.75px";
+        	character.style.right = "93.75px";
         }
       	else if(acceleration.x >= -3 && acceleration.x < -2){
-        	document.getElementById("char").style.right = "62.5px";
+        	character.style.right = "62.5px";
         }
         else if(acceleration.x > -4 && acceleration.x < -3){
-        	document.getElementById("char").style.right = "31.25px";
+        	character.style.right = "31.25px";
         }
         else if(acceleration.x <= -4){
-       		document.getElementById("char").style.right = "0px";
+       		character.style.right = "0px";
         }
     }
 
