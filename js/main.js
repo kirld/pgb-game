@@ -90,16 +90,35 @@
         var element = document.getElementById('test');
         element.innerHTML = acceleration.x;
 
-
-        // Change Background colour depending on device orientation
-        var b = document.getElementById('bd');
-        if(acceleration.y < 7.2) {
-            // Device is falling forward or backward in portrait position
-            b.style.background = "#ED8080";
+        if(acceleration.x >= 4){
+        	document.getElementById("char").style.right = "250px";
         }
-        else {
-            // Device is held in standard portrait mode
-            b.style.background = "#FFFFFF";
+        else if(acceleration.x >= 3 && acceleration.x < 4){
+        	document.getElementById("char").style.right = "218.75px";
+        }
+    	else if(acceleration.x >= 2 && acceleration.x < 3){
+        	document.getElementById("char").style.right = "187.5px";
+        }
+        else if(acceleration.x >= 1 && acceleration.x < 2){
+        	document.getElementById("char").style.right = "156.25px";
+        }
+        else if(acceleration.x >= 0 && acceleration.x < 1){
+        	document.getElementById("char").style.right = "140px";
+        }
+    	else if(acceleration.x >= -1 && acceleration.x < 0){
+        	document.getElementById("char").style.right = "125px";
+        }
+    	else if(acceleration.x >= -2 && acceleration.x < -1){
+        	document.getElementById("char").style.right = "93.75px";
+        }
+      	else if(acceleration.x >= -3 && acceleration.x < -2){
+        	document.getElementById("char").style.right = "62.5px";
+        }
+        else if(acceleration.x > -4 && acceleration.x < -3){
+        	document.getElementById("char").style.right = "31.25px";
+        }
+        else if(acceleration.x <= -4){
+       		document.getElementById("char").style.right = "0px";
         }
     }
 
