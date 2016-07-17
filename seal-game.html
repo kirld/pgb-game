@@ -4,63 +4,7 @@
     <title>Acceleration Example</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    // The watch id references the current `watchAcceleration`
-    var watchID = null;
-
-    // Wait for device API libraries to load to prevent errors
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // device APIs are available and ready so start the 
-    // accelerometer and begin checking device position/orientation
-    function onDeviceReady() {
-        startWatch();
-    }
-
-    // Start watching the accelerometer values
-    function startWatch() {
-        // Create options object to update properties of accelerometer
-        // Update acceleration every 50 milliseconds
-        var options = { frequency: 50 };
-        watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-    }
-
-    // Stop watching the acceleration
-    function stopWatch() {
-        if (watchID) {
-            navigator.accelerometer.clearWatch(watchID);
-            watchID = null;
-        }
-    }
-
-    // onSuccess: Get a snapshot of the current acceleration
-    // And display these on the page
-    function onSuccess(acceleration) {
-        var element = document.getElementById('test');
-        element.innerHTML = 'Acceleration X: ' + acceleration.x         + '<br>' +
-                            'Acceleration Y: ' + acceleration.y         + '<br>' +
-                            'Acceleration Z: ' + acceleration.z         + '<br><br>' +
-                            'Timestamp: '      + acceleration.timestamp + '<br>';
-
-        // Change Background colour depending on device orientation
-        var b = document.getElementById('bd');
-        if(acceleration.y < 7.2) {
-            // Device is falling forward or backward in portrait position
-            b.style.background = "#ED8080";
-        }
-        else {
-            // Device is held in standard portrait mode
-            b.style.background = "#FFFFFF";
-        }
-    }
-
-    // onError: Failed to get the acceleration
-    function onError() {
-        alert('onError!');
-    }
-
-    </script>
+    <script type="text/javascript" charset="utf-8" src="js/main.js"></script>
   </head>
 <body class="bg">
 	<div class="center game-screen">
