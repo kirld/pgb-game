@@ -1,7 +1,7 @@
 var canvasWidth =window.innerWidth;
 var canvasHeight = window.innerHeight;
 var centerScreen = canvasWidth / 2;
-var renderer = PIXI.autoDetectRenderer(canvasWidth, canvasHeight,{backgroundColor :  0x1099bb});
+var renderer = PIXI.autoDetectRenderer(canvasWidth, canvasHeight,{backgroundColor : "#58BEFC"});
 document.body.appendChild(renderer.view);
 
 // create the root of the scene graph
@@ -13,9 +13,6 @@ var sealTexture = PIXI.Texture.fromImage('img/seal.png');
 // create a texture from an image path
 var icebergTexture = PIXI.Texture.fromImage('img/iceberg.png');
 
-// create a texture from an image path
-var gameOverTexture = PIXI.Texture.fromImage('img/game-over.png');
-
 // create a new Sprite using the texture
 var seal = new PIXI.Sprite(sealTexture);
 
@@ -23,7 +20,7 @@ var seal = new PIXI.Sprite(sealTexture);
 var spawnLineY = 25;
 
 // spawn a new object every 1500ms
-var spawnRate = 5000;
+var spawnRate = 2500;
 
 // set how fast the objects will fall
 var icebergSpeed = 1;
@@ -159,16 +156,8 @@ function animate() {
         if(sealTop < icebergBottom && sealTop > icebergTop){
 
             if(sealRight > icebergLeft && sealLeft < icebergRight){
+                //vibrate phone to alert user theyve hit iceberg
                 navigator.notification.vibrate(1000);
-                // create a new Sprite using the texture
-                var gameOver = new PIXI.Sprite(gameOverTexture);
-
-                // center the sprite's anchor point
-                gameOver.anchor.x = 0.5;
-                gameOver.anchor.y = 0.5;
-
-                gameOver.width = 100;
-                gameOver.height = 60;
             }
         }
     }
