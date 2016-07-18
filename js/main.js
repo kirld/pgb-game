@@ -109,8 +109,6 @@ var xPos = centerScreen;
 // And display these on the page
 function onAccelerate(acceleration) {
 
-    element.innerHTML = acceleration.x;
-
     var maxAngle = 4;
     var angleRatio = acceleration.x / maxAngle;
     xPos = angleRatio * centerScreen + centerScreen;
