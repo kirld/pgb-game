@@ -20,10 +20,10 @@ var seal = new PIXI.Sprite(sealTexture);
 var spawnLineY = 25;
 
 // spawn a new object every 1500ms
-var spawnRate = 2500;
+var spawnRate = 1000;
 
 // set how fast the objects will fall
-var icebergSpeed = 2;
+var icebergSpeed = 3;
 
 // when was the last object spawned
 var lastSpawn = -1;
