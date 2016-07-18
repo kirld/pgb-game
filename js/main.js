@@ -1,7 +1,7 @@
 var canvasWidth =window.innerWidth;
 var canvasHeight = window.innerHeight;
 var centerScreen = canvasWidth / 2;
-var renderer = PIXI.autoDetectRenderer(canvasWidth, canvasHeight,{backgroundColor : 0x1099bb});
+var renderer = PIXI.autoDetectRenderer(canvasWidth, canvasHeight,{backgroundColor :  0x1099bb});
 document.body.appendChild(renderer.view);
 
 // create the root of the scene graph
@@ -12,6 +12,9 @@ var sealTexture = PIXI.Texture.fromImage('img/seal.png');
 
 // create a texture from an image path
 var icebergTexture = PIXI.Texture.fromImage('img/iceberg.png');
+
+// create a texture from an image path
+var gameOverTexture = PIXI.Texture.fromImage('img/game-over.png');
 
 // create a new Sprite using the texture
 var seal = new PIXI.Sprite(sealTexture);
@@ -156,8 +159,10 @@ function animate() {
         if(sealTop < icebergBottom && sealTop > icebergTop){
 
             if(sealRight > icebergLeft && sealLeft < icebergRight){
-                // alert("hit");
                 navigator.notification.vibrate(1000);
+                // create a new Sprite using the texture
+                var gameOver = new PIXI.Sprite(gameOverTexture);
+
             }
         }
     }
