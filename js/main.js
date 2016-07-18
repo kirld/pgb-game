@@ -120,34 +120,6 @@ function onError() {
 
 
 
-
-
-// function spawnRandomObject() {
-
-//     // select a random type for this new object
-//     var t;
-
-//     // About Math.random()
-//     // Math.random() generates a semi-random number
-//     // between 0-1. So to randomly decide if the next object
-//     // will be A or B, we say if the random# is 0-.49 we
-//     // create A and if the random# is .50-1.00 we create B
-
-
-//     // create the new object
-//     var object = {
-//         // set this objects type
-//         type: t,
-//         // set x randomly but at least 15px off the canvas edges
-//         x: Math.random() * (canvas.width - 30) + 15,
-//         // set y to start on the line where objects are spawned
-//         y: spawnLineY,
-//     }
-
-//     // add the new object to the objects[] array
-//     objects.push(object);
-// }
-
 // start animating
 animate();
 
@@ -184,7 +156,8 @@ function animate() {
         if(sealTop < icebergBottom && sealTop > icebergTop){
 
             if(sealRight > icebergLeft && sealLeft < icebergRight){
-                alert("hit");
+                // alert("hit");
+                navigator.notification.vibrate(1000);
             }
         }
     }
