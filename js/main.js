@@ -184,7 +184,7 @@ function animate() {
         if(sealTop < icebergBottom && sealTop > icebergTop){
 
             if(sealRight > icebergLeft && sealLeft < icebergRight){
-                document.getElementById("bg")
+                alert("hit");
             }
         }
     }
