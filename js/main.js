@@ -1,7 +1,7 @@
 var canvasWidth =window.innerWidth;
 var canvasHeight = window.innerHeight;
 var centerScreen = canvasWidth / 2;
-var renderer = PIXI.autoDetectRenderer(canvasWidth, canvasHeight,{backgroundColor : "#58BEFC"});
+var renderer = PIXI.autoDetectRenderer(canvasWidth, canvasHeight,{backgroundColor : 0x58BEFC});
 document.body.appendChild(renderer.view);
 
 // create the root of the scene graph
@@ -23,7 +23,7 @@ var spawnLineY = 25;
 var spawnRate = 2500;
 
 // set how fast the objects will fall
-var icebergSpeed = 1;
+var icebergSpeed = 2;
 
 // when was the last object spawned
 var lastSpawn = -1;
