@@ -163,6 +163,12 @@ function animate() {
                 // create a new Sprite using the texture
                 var gameOver = new PIXI.Sprite(gameOverTexture);
 
+                // center the sprite's anchor point
+                gameOver.anchor.x = 0.5;
+                gameOver.anchor.y = 0.5;
+
+                gameOver.width = 100;
+                gameOver.height = 60;
             }
         }
     }
