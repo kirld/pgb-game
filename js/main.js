@@ -1,6 +1,5 @@
-    
-var canvasWidth = 250;
-var canvasHeight = 500;
+var canvasWidth =window.innerWidth;
+var canvasHeight = window.innerHeight;
 var centerScreen = canvasWidth / 2;
 var renderer = PIXI.autoDetectRenderer(canvasWidth, canvasHeight,{backgroundColor : 0x1099bb});
 document.body.appendChild(renderer.view);
@@ -185,7 +184,7 @@ function animate() {
         if(sealTop < icebergBottom && sealTop > icebergTop){
 
             if(sealRight > icebergLeft && sealLeft < icebergRight){
-                alert("Collide");
+                document.getElementById("bg")
             }
         }
     }
