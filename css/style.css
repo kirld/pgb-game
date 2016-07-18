@@ -39,3 +39,19 @@ button {
 canvas {
 	position: relative;
 }
+
+.rules h2 {
+	font-size: 1.2em;
+}
+
+.rules {
+	margin-bottom: 30px;
+}
+
+button {
+	border: none;
+	background-color: #ffffff;
+	font-size: 0.8em;
+	text-transform: uppercase;
+	font-weight: bold;
+}
