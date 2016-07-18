@@ -6,7 +6,7 @@
         id        = "de.kiralynn"
         version   = "1.0.0">
 
-    <name>Seal Dash - PGB game</name>
+    <name>Seal Dash</name>
 
     <description>
        Seal Dash game, avoid icebergs, makes use of phone vibration and accelerometer
