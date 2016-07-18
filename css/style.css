@@ -32,7 +32,11 @@ button {
 	height: 100%;
 }
 
-.game-screen {
+/*.game-screen {
 	position: relative;
 	height: 500px;
+}*/
+
+canvas {
+	position: relative;
 }
