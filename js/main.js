@@ -29,7 +29,7 @@ var icebergSpeed = 3;
 var lastSpawn = -1;
 
 // this array holds all spawned object
-var icebergObjects = [];
+var icebergObjects = []
 
 // save the starting time (used to calc elapsed time)
 var startTime = Date.now();
@@ -41,7 +41,7 @@ seal.anchor.y = 0.5;
 
 // move the sprite to the center of the screen
 seal.position.x = 200;
-seal.position.y = 150;
+seal.position.y = 500;
 
 seal.width = 25;
 seal.height = 40;
