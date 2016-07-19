@@ -1,6 +1,10 @@
+//grab the width of the screen
 var canvasWidth =window.innerWidth;
+//grab the height of the screen
 var canvasHeight = window.innerHeight;
+//set the middle of the screen for later user
 var centerScreen = canvasWidth / 2;
+//create the canvas
 var renderer = PIXI.autoDetectRenderer(canvasWidth, canvasHeight,{backgroundColor : 0x58BEFC});
 document.body.appendChild(renderer.view);
 
@@ -43,16 +47,19 @@ seal.anchor.y = 0.5;
 seal.position.x = 200;
 seal.position.y = 500;
 
+//set the heigh and width of the image
 seal.width = 25;
 seal.height = 40;
 
-
+//draw the image onto the canvas
 stage.addChild(seal);
 
+
+//create obstacles
 function createIceberg(){
     // create a new Sprite using the texture
     var iceberg = new PIXI.Sprite(icebergTexture);
-
+    //create objects to hold icebergs
     var icebergObject = {
         instance: iceberg
     };
@@ -68,8 +75,11 @@ function createIceberg(){
     iceberg.width = 40;
     iceberg.height = 40;
 
+    //since there will be many icebergs being created
+    //object must be pushed into an array 
     icebergObjects.push(icebergObject);
 
+    //draw iceberg onto canvas
     stage.addChild(iceberg);
 
 }
@@ -94,20 +104,13 @@ function startWatch() {
     watchID = navigator.accelerometer.watchAcceleration(onAccelerate, onError, options);
 }
 
-// Stop watching the acceleration
-function stopWatch() {
-    if (watchID) {
-        navigator.accelerometer.clearWatch(watchID);
-        watchID = null;
-    }
-}
-
+//store position as middle screen
 var xPos = centerScreen;
 
 // onSuccess: Get a snapshot of the current acceleration
 // And display these on the page
 function onAccelerate(acceleration) {
-
+    //calculate the movement of characters position
     var maxAngle = 4;
     var angleRatio = acceleration.x / maxAngle;
     xPos = angleRatio * centerScreen + centerScreen;
@@ -130,6 +133,7 @@ function animate() {
     // get the elapsed time
     var time = Date.now();
 
+    //store characters dimensions
     var sealTop = seal.y - seal.height / 2;
     var sealLeft = seal.x - seal.width / 2;
     var sealRight = seal.x + seal.width / 2;
@@ -144,6 +148,7 @@ function animate() {
     // move each object down the canvas
     for (var i = 0; i < icebergObjects.length; i++) {
         var iceberg = icebergObjects[i];
+        //store iceberg dimensions to check for hit
         var icebergWidth = iceberg.instance.width;
         var icebergHeight = iceberg.instance.height;
         var icebergTop = iceberg.instance.y - icebergHeight / 2;
@@ -151,10 +156,12 @@ function animate() {
         var icebergRight = iceberg.instance.x + icebergWidth / 2;
         var icebergBottom = iceberg.instance.y + icebergHeight / 2;
 
-        iceberg.instance.position.y+= icebergSpeed;
+        //move iceberg down page
+        iceberg.instance.position.y += icebergSpeed;
 
+        //check for hit, if hit on y axis
         if(sealTop < icebergBottom && sealTop > icebergTop){
-
+            //check for hit on x axis
             if(sealRight > icebergLeft && sealLeft < icebergRight){
                 //vibrate phone to alert user theyve hit iceberg
                 navigator.notification.vibrate(1000);
@@ -162,6 +169,7 @@ function animate() {
         }
     }
 
+    //position set default to middle of screen
     seal.position.x = xPos;
 
     // render the container
