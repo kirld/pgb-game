@@ -164,7 +164,9 @@ function animate() {
             //check for hit on x axis
             if(sealRight > icebergLeft && sealLeft < icebergRight){
                 //vibrate phone to alert user theyve hit iceberg
-                navigator.notification.vibrate(1000);
+                navigator.notification.vibrate(500);
+                alert("Game Over click okay to replay");
+                animate();
             }
         }
     }
