@@ -167,11 +167,11 @@ function animate() {
                     //draw the image onto the canvas
                     stage.addChild(seal);
                     icebergObjects = [];    
-                // // alert("Game over press okay to replay")   
-                navigator.notification.alert("Oh no, you've hit an iceberg", restart, "Game Over", "Play Again!");   
                 function restart(){   
                     animate();
                 }  
+                // // alert("Game over press okay to replay")   
+                navigator.notification.alert("Oh no, you've hit an iceberg", restart, "Game Over", "Play Again!");   
             }
         }
     }
