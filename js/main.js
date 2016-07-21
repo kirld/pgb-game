@@ -108,12 +108,12 @@ function startWatch() {
 //store position as middle screen
 var xPos = centerScreen;
 
-// onSuccess: Get a snapshot of the current acceleration
-// And display these on the page
+// onSuccess: Get the current acceleration
 function onAccelerate(acceleration) {
     //calculate the movement of characters position
     var maxAngle = 4;
     var angleRatio = acceleration.x / maxAngle;
+    //position of character
     xPos = angleRatio * centerScreen + centerScreen;
 }
 
