@@ -169,8 +169,7 @@ function animate() {
 
                 icebergObjects = []; 
                 //draw the image onto the canvas 
-                stage.addChild(seal);
-                animate();   
+                stage.addChild(seal);  
             }
         }
     }
