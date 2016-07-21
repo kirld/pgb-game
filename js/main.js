@@ -166,6 +166,7 @@ function animate() {
                 //vibrate phone to alert user theyve hit iceberg
                 navigator.notification.vibrate(500);   
                 alert("Game over press okay to replay") 
+                icebergObjects = []
                 animate();
             }
         }
