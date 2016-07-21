@@ -161,16 +161,17 @@ function animate() {
             if(sealRight > icebergLeft && sealLeft < icebergRight){
                 //vibrate phone to alert user theyve hit iceberg
                 navigator.notification.vibrate(500); 
+                //vibrate phone to alert user theyve hit iceberg
+                navigator.notification.vibrate(500); 
+                alert("Game over press okay to replay")
+
                 for(var i = stage.children.length - 1; i >= 0; i--) {  
                     stage.removeChild(stage.children[i]);
                 };       
-                // // alert("Game over press okay to replay")   
-                navigator.notification.alert("Oh no, you've hit an iceberg", restart, "Game Over", "Play Again!");   
-                function restart(){   
-                    //draw the image onto the canvas
-                    stage.addChild(seal);
-                    icebergObjects = [];    
-                }  
+
+                icebergObjects = []; 
+                //draw the image onto the canvas 
+                stage.addChild(seal);  
             }
         }
     }
