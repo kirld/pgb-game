@@ -85,13 +85,6 @@ function createIceberg(){
 
 }
 
-
-function removeIcebergs(){
-    for(var i = 0; i < icebergObjects; i++){
-        stage.removeChild(iceberg[i]);
-    }
-}
-
 // The watch id references the current `watchAcceleration`
 var watchID = null;
 
@@ -172,7 +165,11 @@ function animate() {
             if(sealRight > icebergLeft && sealLeft < icebergRight){
                 //vibrate phone to alert user theyve hit iceberg
                 navigator.notification.vibrate(500);  
-                removeIcebergs();
+                
+                for(var i = stage.children.length - 1; i >= 0; i--) {  
+                    stage.removeChild(stage.children[i]);
+                };
+                
                 icebergObjects = []; 
                 alert("Game over press okay to replay") 
                 animate();
