@@ -122,10 +122,6 @@ function onError() {
     alert('onError!');
 }
 
-
-// start animating
-animate();
-
 function animate() {
     // request another animation frame
     requestAnimationFrame(animate);
@@ -187,3 +183,6 @@ function animate() {
     renderer.render(stage);
 
 }
+
+// start animating
+animate();
