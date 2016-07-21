@@ -38,7 +38,6 @@ var icebergObjects = []
 // save the starting time (used to calc elapsed time)
 var startTime = Date.now();
 
-
 // center the sprite's anchor point
 seal.anchor.x = 0.5;
 seal.anchor.y = 0.5;
@@ -50,6 +49,8 @@ seal.position.y = 500;
 //set the heigh and width of the image
 seal.width = 25;
 seal.height = 40;
+
+
 
 //draw the image onto the canvas
 stage.addChild(seal);
@@ -122,7 +123,6 @@ function onError() {
 }
 
 
-
 // start animating
 animate();
 
@@ -164,9 +164,9 @@ function animate() {
             //check for hit on x axis
             if(sealRight > icebergLeft && sealLeft < icebergRight){
                 //vibrate phone to alert user theyve hit iceberg
-                navigator.notification.vibrate(500);
-                alert("Game Over click okay to replay");
-                animate();
+                navigator.notification.vibrate(500);   
+                icebergObject = {};
+                alert("Game over press okay to replay") 
             }
         }
     }
