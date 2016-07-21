@@ -161,14 +161,13 @@ function animate() {
             if(sealRight > icebergLeft && sealLeft < icebergRight){
                 //vibrate phone to alert user theyve hit iceberg
                 navigator.notification.vibrate(500); 
-                //vibrate phone to alert user theyve hit iceberg
-                navigator.notification.vibrate(500); 
+                //alert user to restart game
                 alert("Game over press okay to replay")
-
+                //remove everything off screen to reset game
                 for(var i = stage.children.length - 1; i >= 0; i--) {  
                     stage.removeChild(stage.children[i]);
                 };       
-
+                //empty array
                 icebergObjects = []; 
                 //draw the image onto the canvas 
                 stage.addChild(seal);  
