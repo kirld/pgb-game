@@ -164,14 +164,17 @@ function animate() {
             //check for hit on x axis
             if(sealRight > icebergLeft && sealLeft < icebergRight){
                 //vibrate phone to alert user theyve hit iceberg
-                navigator.notification.vibrate(500);  
-                alert("Game over press okay to replay")                 
-                for(var i = stage.children.length - 1; i >= 0; i--) {  
-                    stage.removeChild(stage.children[i]);
-                };
-                //draw the image onto the canvas
-                stage.addChild(seal);
-                animate();
+                navigator.notification.vibrate(500); 
+                function restart(){             
+                    for(var i = stage.children.length - 1; i >= 0; i--) {  
+                        stage.removeChild(stage.children[i]);
+                    };
+                    //draw the image onto the canvas
+                    stage.addChild(seal);
+                    icebergObjects = []; 
+                } 
+                // alert("Game over press okay to replay")   
+                navigator.notification.alert("Oh no, you've hit an iceber", restart, "Game Over", "Play Again")    
             }
         }
     }
