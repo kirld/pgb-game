@@ -170,8 +170,8 @@ function animate() {
                     stage.addChild(seal);
                     animate();
                 } 
-                // alert("Game over press okay to replay")   
-                navigator.notification.alert("Oh no, you've hit an iceberg", restart, "Game Over", "Play Again")    
+                // // alert("Game over press okay to replay")   
+                navigator.notification.alert("Oh no, you've hit an iceberg", restart, "Game Over", "Play Again!");    
             }
         }
     }
