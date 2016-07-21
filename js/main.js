@@ -171,8 +171,6 @@ function animate() {
                 };
                 //draw the image onto the canvas
                 stage.addChild(seal);
-                icebergObjects = []; 
-                icebergSpeed = 3;
                 animate();
             }
         }
